@@ -1,0 +1,18 @@
+packages:
+  "framer-motion": "For premium page transitions, scroll reveals, and interactive micro-animations"
+  "recharts": "For the dashboard security score and statistical charts"
+  "lucide-react": "For beautiful consistent iconography"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/intellivault/public/images/hero-abstract.png"
+    description: "Dark moody abstract background with glowing neon cyan and purple digital nodes, depicting a highly secure futuristic AI neural network or digital vault"
+    aspect_ratio: "16:9"
+  - path: "artifacts/intellivault/public/images/security-shield.png"
+    description: "3D render of a futuristic holographic security shield floating in dark space with glowing cryptographic runes orbiting it, neon cyan and deep violet"
+    aspect_ratio: "1:1"
+
+notes:
+  - The frontend relies on mock data arrays as fallbacks if the backend API endpoints return undefined or fail, ensuring a seamless demo experience.
+  - UI strictly follows a dark futuristic neon theme with Space Grotesk and Outfit fonts.

@@ -1,0 +1,7 @@
+{
+  "name": "intellivault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IntelliVault project",
+  "packageManager": "pnpm@9.0.0"
+}

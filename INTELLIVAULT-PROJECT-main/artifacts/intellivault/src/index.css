@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Outfit', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Default Dark Futuristic Theme - Deep blacks/blues with Neon Cyan and Purple */
+  --background: 227 43% 4%;
+  --foreground: 210 40% 98%;
+
+  --card: 224 36% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 224 36% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 183 100% 50%; /* Neon Cyan */
+  --primary-foreground: 227 43% 4%;
+
+  --secondary: 271 76% 53%; /* Neon Purple */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 215 28% 17%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 215 28% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 215 28% 17%;
+  --input: 215 28% 17%;
+  --ring: 183 100% 50%;
+
+  --radius: 0.75rem;
+}
+
+:root.dark {
+  --background: 227 43% 4%;
+  --foreground: 210 40% 98%;
+
+  --card: 224 36% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 224 36% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 183 100% 50%;
+  --primary-foreground: 227 43% 4%;
+
+  --secondary: 271 76% 53%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 215 28% 17%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 215 28% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 215 28% 17%;
+  --input: 215 28% 17%;
+  --ring: 183 100% 50%;
+}
+
+:root.light {
+  --background: 207 21% 96%;
+  --foreground: 214 24% 17%;
+
+  --card: 210 20% 98%;
+  --card-foreground: 214 24% 17%;
+
+  --popover: 210 20% 98%;
+  --popover-foreground: 214 24% 17%;
+
+  --primary: 208 100% 40%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 271 76% 53%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 215 20% 87%;
+  --muted-foreground: 213 20% 41%;
+
+  --accent: 202 90% 65%;
+  --accent-foreground: 0 0% 18%;
+
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 210 20% 90%;
+  --input: 210 20% 95%;
+  --ring: 208 100% 40%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Custom Utilities for Neon Effects */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(var(--secondary) / 0.5), 0 0 20px hsl(var(--secondary) / 0.3);
+  }
+  .bg-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2), inset 0 0 20px hsl(var(--primary) / 0.1);
+  }
+  .glass-panel {
+    @apply bg-card/40 backdrop-blur-xl border border-white/10;
+  }
+  .glass-panel-hover {
+    @apply hover:bg-card/60 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)];
+  }
+  
+  /* Hide scrollbar for clean dashboard look */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

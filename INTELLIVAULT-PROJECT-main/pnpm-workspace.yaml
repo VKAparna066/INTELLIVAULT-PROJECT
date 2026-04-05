@@ -1,0 +1,7 @@
+packages:
+  - 'artifacts/intellivault'
+  - 'artifacts/api-server'
+  - 'lib/api-spec'
+  - 'lib/api-client-react'
+  - 'lib/api-zod'
+  - 'lib/db'
